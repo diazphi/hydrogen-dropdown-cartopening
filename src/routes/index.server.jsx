@@ -119,7 +119,7 @@ const HOMEPAGE_CONTENT_QUERY = gql`
   query homepage($country: CountryCode, $language: LanguageCode)
   @inContext(country: $country, language: $language) {
     heroBanners: collections(
-      first: 3
+      first: 1
       query: "collection_type:custom"
       sortKey: UPDATED_AT
     ) {
