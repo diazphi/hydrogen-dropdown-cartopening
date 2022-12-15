@@ -105,7 +105,7 @@ function MobileHeader({countryCode, title, isHome, openCart, openMenu}) {
         to="/"
       >
         <Heading className="font-bold text-center" as={isHome ? 'h1' : 'h2'}>
-          {title}
+            <img src="/src/assets/logo.png" width="120" height="80" loading="lazy" />
         </Heading>
       </Link>
 

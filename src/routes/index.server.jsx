@@ -120,8 +120,7 @@ const HOMEPAGE_CONTENT_QUERY = gql`
   @inContext(country: $country, language: $language) {
     heroBanners: collections(
       first: 1
-      query: "collection_type:custom"
-      sortKey: UPDATED_AT
+      query: "title:Acacia Serveware"
     ) {
       nodes {
         id
@@ -131,10 +130,16 @@ const HOMEPAGE_CONTENT_QUERY = gql`
         heading: metafield(namespace: "hero", key: "title") {
           value
         }
+        subheading: metafield(namespace: "hero", key: "subtitle") {
+          value
+        }
         byline: metafield(namespace: "hero", key: "byline") {
           value
         }
         cta: metafield(namespace: "hero", key: "cta") {
+          value
+        }
+        cta2: metafield(namespace: "hero", key: "cta2") {
           value
         }
         spread: metafield(namespace: "hero", key: "spread") {

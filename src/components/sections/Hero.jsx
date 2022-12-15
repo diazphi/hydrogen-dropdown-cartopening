@@ -5,8 +5,10 @@ import {Heading, Text} from '~/components';
 export function Hero({
   byline,
   cta,
+  cta2,
   handle,
   heading,
+  subheading,
   height,
   loading,
   spread,
@@ -62,12 +64,18 @@ export function Hero({
               {heading.value}
             </Heading>
           )}
+           {subheading?.value && (
+            <Heading format as="h3" size="display" className="max-w-md">
+              {subheading.value}
+            </Heading>
+          )}
           {byline?.value && (
             <Text format width="narrow" as="p" size="lead">
               {byline.value}
             </Text>
           )}
           {cta?.value && <Text size="lead">{cta.value}</Text>}
+          {cta2?.value && <Text size="lead">{cta2.value}</Text>}
         </div>
       </section>
     </Link>
