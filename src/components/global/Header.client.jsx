@@ -124,7 +124,17 @@ function MobileHeader({countryCode, title, isHome, openCart, openMenu}) {
 
 function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
   const {y} = useWindowScroll();
-
+  const TopMenuHover = event => {
+    let othertopnav = document.querySelectorAll('header nav > .top-menu');
+    othertopnav.forEach(top => {
+      top.classList.remove('active');
+    })
+    event.target.closest('.top-menu').classList.add('active');
+  }
+  const DrodDownOut = event => {
+    console.log(event);
+    event.target.closest('.top-menu').classList.remove('active');
+  }
   const styles = {
     button:
       'relative flex items-center justify-center w-8 h-8 focus:ring-primary/5',
@@ -146,9 +156,20 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
         <nav className="flex gap-8">
           {/* Top level menu items */}
           {(menu?.items || []).map((item) => (
-            <Link key={item.id} to={item.to} target={item.target}>
-              {item.title}
+            <div className="top-menu" key={'top-menu--'+item.id}>
+            <Link key={item.id} to={item.to} target={item.target} onMouseEnter={TopMenuHover}>
+              {item.title}             
             </Link>
+           
+                  {item?.items.length > 0 && (
+                              <div className="drop-down" key={'drop-down--'+item.id} onMouseLeave={DrodDownOut}>
+                               {(item?.items || []).map((submenu) => (
+                                  <Link key={submenu.id} to={submenu.to} target={submenu.target}>{submenu.title}</Link>
+                                ))}      
+                              </div>
+                  )}
+              
+             </div>
           ))}
         </nav>
       </div>
@@ -175,7 +196,7 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
         <Link to={'/account'} className={styles.button}>
           <IconAccount />
         </Link>
-        <button onClick={openCart} className={styles.button}>
+        <button onClick={openCart} className={styles.button} data-action-drawer="open">
           <IconBag />
           <CartBadge dark={isHome} />
         </button>

@@ -176,3 +176,28 @@ shop-pay-button {
     }
   }
 }
+/* Custom CSS */
+
+header nav > .top-menu {
+  position: relative;
+}
+header nav > .top-menu > .drop-down {
+  position: absolute;
+  width: max-content;
+  margin-top: 12px;
+  background-color: black;
+  background-color: rgb(var(--color-primary) / 0.8);
+  padding: 14px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+}
+header nav > .top-menu > .drop-down > a {
+  display: block;
+  padding: 8px 0;
+}
+header nav > .top-menu.active > .drop-down {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}

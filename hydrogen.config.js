@@ -6,11 +6,11 @@ export default defineConfig({
     defaultLanguageCode: 'EN',
     storeDomain:
       // @ts-ignore
-      Oxygen?.env?.PUBLIC_STORE_DOMAIN || 'lynnliana-staging.myshopify.com',
+      Oxygen?.env?.PUBLIC_STORE_DOMAIN || 'personalise-engrave-services.myshopify.com',
     storefrontToken:
       // @ts-ignore
       Oxygen?.env?.PUBLIC_STOREFRONT_API_TOKEN ||
-      'f82e9a62fcd31fe284b0c6759ebc058e',
+      '8592972999cebd941adf3522892fc43b',
     privateStorefrontToken:
       // @ts-ignore
       Oxygen?.env?.PRIVATE_STOREFRONT_API_TOKEN,

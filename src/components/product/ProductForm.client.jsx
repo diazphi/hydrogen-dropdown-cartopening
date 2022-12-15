@@ -69,7 +69,11 @@ export function ProductForm() {
     },
     [setSelectedOption, params, pathname],
   );
-
+  const OpenDrawer = event => {
+    console.log(event);
+    let buttonheadercart = document.querySelector('[data-action-drawer="open"]');
+    setTimeout(buttonheadercart.click(),2000);
+  }
   return (
     <form className="grid gap-10">
       {
@@ -105,6 +109,7 @@ export function ProductForm() {
           accessibleAddingToCartLabel="Adding item to your cart"
           disabled={isOutOfStock}
           type="button"
+          onClick={OpenDrawer}
         >
           <Button
             width="full"
