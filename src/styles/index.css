@@ -180,11 +180,12 @@ shop-pay-button {
 
 header nav > .top-menu {
   position: relative;
+  margin: auto;
 }
 header nav > .top-menu > .drop-down {
   position: absolute;
   width: max-content;
-  margin-top: 12px;
+  top: 57px;
   background-color: black;
   background-color: rgb(var(--color-primary) / 0.8);
   padding: 14px;

@@ -132,7 +132,6 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
     event.target.closest('.top-menu').classList.add('active');
   }
   const DrodDownOut = event => {
-    console.log(event);
     event.target.closest('.top-menu').classList.remove('active');
   }
   const styles = {
@@ -151,7 +150,7 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
     <header role="banner" className={styles.container}>
       <div className="flex gap-12">
         <Link className={`font-bold`} to="/">
-          {title}
+          <img src="/src/assets/logo.png" width="120" height="80" loading="lazy" />
         </Link>
         <nav className="flex gap-8">
           {/* Top level menu items */}
