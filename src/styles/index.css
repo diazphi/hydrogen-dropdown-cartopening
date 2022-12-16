@@ -180,17 +180,23 @@ shop-pay-button {
 
 header nav > .top-menu {
   position: relative;
+  margin: auto;
 }
 header nav > .top-menu > .drop-down {
   position: absolute;
   width: max-content;
-  margin-top: 12px;
-  background-color: black;
-  background-color: rgb(var(--color-primary) / 0.8);
+  top: 57px;
   padding: 14px;
   opacity: 0;
   visibility: hidden;
   z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+header[class*="bg-primary/80"] nav > .top-menu > .drop-down {
+  background-color: rgb(var(--color-primary) / 0.8);
+}
+header[class*="bg-contrast/80"] nav > .top-menu > .drop-down {
+  background-color: rgb(var(--color-contrast) / 0.8);
 }
 header nav > .top-menu > .drop-down > a {
   display: block;
@@ -200,4 +206,10 @@ header nav > .top-menu.active > .drop-down {
   opacity: 1;
   visibility: visible;
   z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+header nav > .top-menu > .drop-down > a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: lightgray;
 }

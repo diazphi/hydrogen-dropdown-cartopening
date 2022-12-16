@@ -2,7 +2,6 @@ import {Suspense, useMemo} from 'react';
 import {gql, useShopQuery, useLocalization} from '@shopify/hydrogen';
 import {PRODUCT_CARD_FRAGMENT} from '~/lib/fragments';
 import {ProductCard, Section} from '~/components';
-
 const mockProducts = new Array(12).fill('');
 
 export function ProductSwimlane({
@@ -30,7 +29,6 @@ export function ProductSwimlane({
     // If no data is provided, we'll go and query the top products
     return <TopProducts count={count} />;
   }, [count, data]);
-
   return (
     <Section heading={title} padding="y" {...props}>
       <div className="swimlane hiddenScroll md:pb-8 md:scroll-px-8 lg:scroll-px-12 md:px-8 lg:px-12">
