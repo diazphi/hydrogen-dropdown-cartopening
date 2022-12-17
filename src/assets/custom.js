@@ -14,8 +14,6 @@ theme.CustomJS = function() {
             const swipercontainer = document.querySelector('.swiper.mySwiper');
           
             if(swipercontainer && Swiper) {
-                console.log(swipercontainer);
-                console.log(Swiper);
                 swipercontainer.addEventListener('mouseenter', () => {
                     if(!_.state.swiper) {
                         var swiper = new Swiper(".mySwiper", {});
