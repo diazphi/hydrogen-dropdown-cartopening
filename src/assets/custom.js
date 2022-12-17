@@ -16,8 +16,16 @@ theme.CustomJS = function() {
             if(swipercontainer && Swiper) {
                 swipercontainer.addEventListener('mouseenter', () => {
                     if(!_.state.swiper) {
-                        var swiper = new Swiper(".mySwiper", {});
                         _.state.swiper = true;
+                        var swiper = new Swiper('.mySwiper', {
+                            slidesPerView: 3,
+                            slidesPerColumn: 2,
+                            spaceBetween: 30,
+                            pagination: {
+                              el: '.swiper-pagination',
+                              clickable: true,
+                            },
+                          });
                     }                    
                 })     
                 obs.disconnect();
