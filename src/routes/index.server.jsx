@@ -1,4 +1,4 @@
-import {Suspense} from 'react';
+import {Suspense, useEffect} from 'react';
 import {
   CacheLong,
   gql,
@@ -11,7 +11,7 @@ import {
 
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/lib/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
-import {FeaturedCollections, Hero} from '~/components';
+import {FeaturedCollections, Hero, FeaturedSliders} from '~/components';
 import {Layout, ProductSwimlane} from '~/components/index.server';
 
 export default function Homepage() {
@@ -72,6 +72,9 @@ function HomepageContent() {
         title="Collections"
       />
       {tertiaryHero && <Hero {...tertiaryHero} />}
+      <FeaturedSliders
+        title="Best Sellers"
+      />
     </>
   );
 }
