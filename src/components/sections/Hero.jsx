@@ -74,7 +74,7 @@ export function Hero({
               {byline.value}
             </Text>
           )}
-          {cta?.value && <Text size="lead">{cta.value}</Text>}
+          {cta?.value && <Text size="lead" data-cta-hero="home">{cta.value}</Text>}
           {cta2?.value && <Text size="lead">{cta2.value}</Text>}
         </div>
       </section>

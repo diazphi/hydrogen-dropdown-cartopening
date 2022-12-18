@@ -213,3 +213,14 @@ header nav > .top-menu > .drop-down > a:hover {
   text-underline-offset: 4px;
   text-decoration-color: lightgray;
 }
+[data-cta-hero="home"] {
+  border: 1px solid white;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in;
+  background-color: transparent;
+}
+[data-cta-hero="home"]:hover {
+  background-color: white;
+  transition: all 0.3s ease-in;
+  color: black;
+}

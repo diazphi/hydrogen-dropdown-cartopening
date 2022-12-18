@@ -1,6 +1,6 @@
 import {Heading, Section, Grid} from '~/components';
 import {Suspense} from 'react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 import { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './css/swiper.css';
@@ -13,20 +13,21 @@ import {
     useMoney,
   } from '@shopify/hydrogen';
 export function FeaturedSliders({data}) {
-    const [color, setColor] = useState('blue');
-    useEffect(() => setColor('red'), []);
     return (
         <Suspense>
             <Section>        
             <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y]}
+                modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                 spaceBetween={50}
-                slidesPerView={3}
-                navigation
-                pagination={{ clickable: true }}
-                scrollbar={{ draggable: true }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
+                slidesPerView={4}
+                pagination={{
+                    type: "progressbar",
+                }}
+                autoplay={{
+                    delay: 3500,
+                    disableOnInteraction: true,
+                }}
+                navigation={true}
                 >
                     {(data?.nodes || []).map((item) => (
                              <SwiperSlide key={item.id}>                                 
