@@ -1,4 +1,4 @@
-import {Suspense, useEffect} from 'react';
+import {Suspense} from 'react';
 import {
   CacheLong,
   gql,
@@ -72,7 +72,11 @@ function HomepageContent() {
         title="Collections"
       />
       {tertiaryHero && <Hero {...tertiaryHero} />}
-      <FeaturedSliders />
+      <FeaturedSliders     
+        data={featuredProducts.nodes}
+        title="Featured Products"
+        divider="bottom" 
+       />
     </>
   );
 }
