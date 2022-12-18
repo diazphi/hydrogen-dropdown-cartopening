@@ -3,9 +3,6 @@ import {Link, Image} from '@shopify/hydrogen';
 import {Heading, Section, Grid} from '~/components';
 
 export function FeaturedCollections({data}) {
-  console.log(data);
-
-
   return (
     <Section>
       <div className="featured-collection">
@@ -13,7 +10,6 @@ export function FeaturedCollections({data}) {
               <>
                 {(data?.nodes || []).map((item) => (
                   <div className="collection-item" key={item.id}>
-                    {console.log(item)}
                     <img 
                       width="320"
                       height="400"
@@ -21,6 +17,7 @@ export function FeaturedCollections({data}) {
                       loading="lazy"
                       alt={`Picture of ${item.title}`}
                     />
+                    <h2>{item.title}</h2>
                   </div>
                 ))}
               </>
