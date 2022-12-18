@@ -11,9 +11,9 @@ import {
 
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/lib/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
-import {FeaturedCollections, Hero} from '~/components';
+import {FeaturedCollections, Hero, FeaturedSliders} from '~/components';
 import {Layout, ProductSwimlane} from '~/components/index.server';
-import { FeaturedSliders } from '../components/FeaturedSliders.client';
+
 export default function Homepage() {
   useServerAnalytics({
     shopify: {
@@ -49,7 +49,7 @@ function HomepageContent() {
     preload: true,
   });
 
-  const {heroBanners, featuredCollections, featuredProducts} = data;
+  const {heroBanners, featuredProducts} = data;
 
   // fill in the hero banners with placeholders if they're missing
   const [primaryHero, secondaryHero, tertiaryHero] = getHeroPlaceholder(
@@ -61,7 +61,8 @@ function HomepageContent() {
       {primaryHero && (
         <Hero {...primaryHero} height="full" top loading="eager" />
       )}
-      <ProductSwimlane
+      <FeaturedSliders data={featuredProducts} />
+      {/* <ProductSwimlane
         data={featuredProducts.nodes}
         title="Featured Products"
         divider="bottom"
@@ -71,12 +72,7 @@ function HomepageContent() {
         data={featuredCollections.nodes}
         title="Collections"
       />
-      {tertiaryHero && <Hero {...tertiaryHero} />}
-      <FeaturedSliders     
-        data={featuredProducts.nodes}
-        title="Featured Products"
-        divider="bottom" 
-       />
+      {tertiaryHero && <Hero {...tertiaryHero} />} */}
     </>
   );
 }

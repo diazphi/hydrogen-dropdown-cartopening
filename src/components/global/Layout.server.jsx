@@ -1,10 +1,8 @@
 import {Suspense} from 'react';
 import {useLocalization, useShopQuery, CacheLong, gql} from '@shopify/hydrogen';
-
 import {Header} from '~/components';
 import {Footer} from '~/components/index.server';
 import {parseMenu} from '~/lib/utils';
-
 const HEADER_MENU_HANDLE = 'main-menu';
 const FOOTER_MENU_HANDLE = 'footer';
 
@@ -61,7 +59,6 @@ function useLayoutQuery() {
     cache: CacheLong(),
     preload: '*',
   });
-
   const shopName = data ? data.shop.name : SHOP_NAME_FALLBACK;
 
   /*
