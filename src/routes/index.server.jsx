@@ -11,9 +11,9 @@ import {
 
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/lib/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
-import {FeaturedCollections, Hero, FeaturedSliders} from '~/components';
+import {FeaturedCollections, Hero} from '~/components';
 import {Layout, ProductSwimlane} from '~/components/index.server';
-
+import { FeaturedSliders } from '../components/FeaturedSliders.client';
 export default function Homepage() {
   useServerAnalytics({
     shopify: {
@@ -72,9 +72,7 @@ function HomepageContent() {
         title="Collections"
       />
       {tertiaryHero && <Hero {...tertiaryHero} />}
-      <FeaturedSliders
-        title="Best Sellers"
-      />
+      <FeaturedSliders />
     </>
   );
 }
