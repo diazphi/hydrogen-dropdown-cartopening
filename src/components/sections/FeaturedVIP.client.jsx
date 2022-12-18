@@ -1,8 +1,4 @@
 import {Suspense} from 'react';
-import {
-    Image,
-    Link
-  } from '@shopify/hydrogen';
 export function FeaturedVIP() {
     return (
         <Suspense>

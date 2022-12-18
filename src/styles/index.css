@@ -192,11 +192,18 @@ header nav > .top-menu > .drop-down {
   z-index: -1;
   transition: all 0.3s ease-in-out;
 }
-header[class*="bg-primary/80"] nav > .top-menu > .drop-down {
-  background-color: rgb(var(--color-primary) / 0.8);
+header[class*="bg-primary/80"] nav > .top-menu > .drop-down,
+header[class*="bg-primary/80"],
+header[class*="bg-contrast/80"] nav > .top-menu > .drop-down,
+header[class*="bg-contrast/80"] {
+  background-color: rgb(54, 0, 29, 0.8);
 }
-header[class*="bg-contrast/80"] nav > .top-menu > .drop-down {
-  background-color: rgb(var(--color-contrast) / 0.8);
+header[class*="bg-contrast/80"] a {
+  color: white;
+}
+header[class*="bg-contrast/80"] svg path,
+header[class*="bg-primary/80"] svg path { 
+  fill: white;
 }
 header nav > .top-menu > .drop-down > a {
   display: block;
@@ -220,7 +227,10 @@ header nav > .top-menu > .drop-down > a:hover {
   background-color: transparent;
 }
 [data-cta-hero="home"]:hover {
-  background-color: white;
+  background-color: rgb(54, 0, 29, 0.8);
   transition: all 0.3s ease-in;
-  color: black;
+  color: white;
+}
+footer {
+  background-color: rgb(54, 0, 29, 1) !important;
 }

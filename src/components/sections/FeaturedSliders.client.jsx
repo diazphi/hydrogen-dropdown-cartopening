@@ -1,15 +1,11 @@
-import {Heading, Section, Grid} from '~/components';
+import {Section} from '~/components';
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
-import { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './css/swiper.css';
 import './css/custom.css';
 import {
-    flattenConnection,
     Image,
     Link,
-    Money,
-    useMoney,
   } from '@shopify/hydrogen';
 export function FeaturedSliders({data}) {
     return (

@@ -1,6 +1,4 @@
-import {Link, Image} from '@shopify/hydrogen';
-
-import {Heading, Section, Grid} from '~/components';
+import {Section} from '~/components';
 
 export function FeaturedCollections({data}) {
   return (
