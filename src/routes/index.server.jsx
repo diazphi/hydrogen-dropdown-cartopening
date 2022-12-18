@@ -11,8 +11,8 @@ import {
 
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/lib/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
-import {FeaturedCollections, Hero, FeaturedSliders} from '~/components';
-import {Layout, ProductSwimlane} from '~/components/index.server';
+import {FeaturedCollections, Hero, FeaturedSliders, FeaturedVIP} from '~/components';
+import {Layout} from '~/components/index.server';
 
 export default function Homepage() {
   useServerAnalytics({
@@ -49,19 +49,22 @@ function HomepageContent() {
     preload: true,
   });
 
-  const {heroBanners, featuredProducts} = data;
+  const {heroBanners, featuredCollections, featuredProducts} = data;
 
   // fill in the hero banners with placeholders if they're missing
   const [primaryHero, secondaryHero, tertiaryHero] = getHeroPlaceholder(
     heroBanners.nodes,
+    featuredCollections.nodes
   );
 
   return (
     <>
-      {primaryHero && (
-        <Hero {...primaryHero} height="full" top loading="eager" />
-      )}
+      <Hero {...primaryHero} height="full" top loading="eager" />
       <FeaturedSliders data={featuredProducts} />
+      <FeaturedVIP />
+      <FeaturedCollections
+        data={featuredCollections}
+      />
       {/* <ProductSwimlane
         data={featuredProducts.nodes}
         title="Featured Products"
@@ -156,9 +159,8 @@ const HOMEPAGE_CONTENT_QUERY = gql`
       }
     }
     featuredCollections: collections(
-      first: 3
-      query: "collection_type:smart"
-      sortKey: UPDATED_AT
+      query: "(title:Best Sellers) OR (title:Accessories) OR (title:Cheese Boards) OR (title:Serving Trays)"
+      first: 4
     ) {
       nodes {
         id

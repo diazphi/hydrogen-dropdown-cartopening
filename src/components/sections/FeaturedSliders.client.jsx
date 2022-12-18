@@ -1,5 +1,4 @@
 import {Heading, Section, Grid} from '~/components';
-import {Suspense} from 'react';
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 import { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -14,7 +13,6 @@ import {
   } from '@shopify/hydrogen';
 export function FeaturedSliders({data}) {
     return (
-        <Suspense>
             <Section>        
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
@@ -53,6 +51,5 @@ export function FeaturedSliders({data}) {
                     ))}
                 </Swiper>
             </Section>
-        </Suspense>
     );
 }
