@@ -70,6 +70,5 @@
     width: auto; max-width: none;
   }
   .default-content-container-inner > .marquee:last-child {
-    padding-left: 51rem;
     margin-left: 0;
   }
