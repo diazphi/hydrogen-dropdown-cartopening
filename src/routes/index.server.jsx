@@ -61,18 +61,6 @@ function HomepageContent() {
       {primaryHero && (
         <Hero {...primaryHero} height="full" top loading="eager" />
       )}
-      <FeaturedSliders data={featuredProducts} />
-      {/* <ProductSwimlane
-        data={featuredProducts.nodes}
-        title="Featured Products"
-        divider="bottom"
-      />
-      {secondaryHero && <Hero {...secondaryHero} />}
-      <FeaturedCollections
-        data={featuredCollections.nodes}
-        title="Collections"
-      />
-      {tertiaryHero && <Hero {...tertiaryHero} />} */}
     </>
   );
 }
